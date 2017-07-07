@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.1">
+  <description>MiniFi run</description>
+  <groupId>10211188-158b-1550-5440-bde478ce9b8b</groupId>
+  <name>RainbowForMiniFi</name>
+  <snippet>
+    <connections>
+      <id>f98d2b57-5427-3d8b-0000-000000000000</id>
+      <parentGroupId>5192d0e2-e8c6-381c-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>8bb2c9c4-a246-3cc0-0000-000000000000</groupId>
+        <id>1021118a-158b-1550-102d-2d8117b0285e</id>
+        <type>REMOTE_INPUT_PORT</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>5192d0e2-e8c6-381c-0000-000000000000</groupId>
+        <id>a9c1898a-2ad2-3a75-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <processors>
+      <id>a9c1898a-2ad2-3a75-0000-000000000000</id>
+      <parentGroupId>5192d0e2-e8c6-381c-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>12.0</y>
+      </position>
+      <bundle>
+        <artifact>nifi-standard-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.2.0</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Command</key>
+            <value>
+              <name>Command</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>
+              <name>Command Arguments</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Batch Duration</key>
+            <value>
+              <name>Batch Duration</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Redirect Error Stream</key>
+            <value>
+              <name>Redirect Error Stream</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>
+              <name>Argument Delimiter</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Command</key>
+            <value>/opt/demo/minifi.sh</value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+          </entry>
+          <entry>
+            <key>Batch Duration</key>
+          </entry>
+          <entry>
+            <key>Redirect Error Stream</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value> </value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>60 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>ExecuteProcess</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.ExecuteProcess</type>
+    </processors>
+    <remoteProcessGroups>
+      <id>8bb2c9c4-a246-3cc0-0000-000000000000</id>
+      <parentGroupId>5192d0e2-e8c6-381c-0000-000000000000</parentGroupId>
+      <position>
+        <x>666.0</x>
+        <y>0.0</y>
+      </position>
+      <communicationsTimeout>30 sec</communicationsTimeout>
+      <contents>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>9c843ad3-015c-1000-196a-ca9ba328c719</id>
+          <name>MiniFi Images</name>
+          <targetRunning>false</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>true</connected>
+          <exists>true</exists>
+          <id>1021118a-158b-1550-102d-2d8117b0285e</id>
+          <name>MiniFi Rainbow</name>
+          <targetRunning>false</targetRunning>
+          <transmitting>true</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>166616e3-1962-1660-2b7c-2f824584b23a</id>
+          <name>MiniFi SenseHat</name>
+          <targetRunning>false</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+        <inputPorts>
+          <comments></comments>
+          <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+          <connected>false</connected>
+          <exists>true</exists>
+          <id>8d7ac155-015c-1000-48d3-6a158aedc530</id>
+          <name>MiniFi Tinker</name>
+          <targetRunning>false</targetRunning>
+          <transmitting>false</transmitting>
+          <useCompression>false</useCompression>
+        </inputPorts>
+      </contents>
+      <proxyHost></proxyHost>
+      <proxyUser></proxyUser>
+      <targetUri>http://hw13125.local:8080/nifi/</targetUri>
+      <targetUris>http://hw13125.local:8080/nifi/</targetUris>
+      <transportProtocol>HTTP</transportProtocol>
+      <yieldDuration>10 sec</yieldDuration>
+    </remoteProcessGroups>
+  </snippet>
+  <timestamp>07/07/2017 07:19:18 EDT</timestamp>
+</template>
